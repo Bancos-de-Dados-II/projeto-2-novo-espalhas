@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import {env} from './config/envConfig';
-import BenefRouter from './router/beneficiario-router';
+import BenefRouter from './router/beneficiario.route';
 import {connectDB} from './config/mongo';
 
 const app = express();

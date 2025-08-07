@@ -1,6 +1,7 @@
 import {Beneficiario, IBeneficiario} from '../models/Beneficiario.model';
 
 export default class BeneficiarioService {
+
     static async getAllBeneficiarios() {
         return await Beneficiario.find().exec();
     }
@@ -10,15 +11,15 @@ export default class BeneficiarioService {
         return benef.save();
     }
 
-    static async getById(id: any) {
+    static async getById(id: string) {
         return await Beneficiario.findById(id).exec();
     }
 
-    static async editBenefById(id: any, data: any) {
+    static async editBenefById(id: string, data: any) {
         return Beneficiario.findByIdAndUpdate(id, data, {new: true}).exec();
     }
 
-    static async deleteBenefById(id: any) {
+    static async deleteBenefById(id: string) {
         await Beneficiario.findByIdAndDelete(id).exec();
     }
 }
