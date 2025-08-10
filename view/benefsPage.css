@@ -12,10 +12,19 @@ table {
     background-color: #f4f4f4;
   }
   button {
-    padding: 5px 10px;
-    margin: 0 5px;
-  }
-  .table-container {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; 
+}
+
+.table-container {
 max-height: 400px; 
 overflow-y: auto;
 margin-top: 20px;
