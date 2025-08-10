@@ -221,4 +221,23 @@ function exibirMapa(location) {
   }, 100); 
 }
 
+const tdAcoes = document.createElement("td");
+
+const btEdit = document.createElement("button");
+btEdit.textContent = "✏️ Editar";
+btEdit.classList.add("btn-edit");
+btEdit.onclick = () => editarBenef(benef.uuid);
+
+const btDelete = document.createElement("button");
+btDelete.textContent = "🗑️ Excluir";
+btDelete.classList.add("btn-delete");
+btDelete.onclick = () => excluirBenef(benef.uuid);
+
+tdAcoes.appendChild(btEdit);
+tdAcoes.appendChild(btDelete);
+
+document.getElementById("btnVoltar").addEventListener("click", () => {
+  window.location.href = "index.html";
+});
+
 carregarBeneficiarios();
