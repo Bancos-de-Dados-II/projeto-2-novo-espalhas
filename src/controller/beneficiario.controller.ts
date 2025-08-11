@@ -48,7 +48,7 @@ export default class BeneficiarioController {
                     return;
                 }
 
-                const maxDistance = distancia ? parseInt(distancia as string) : 5000;
+                const maxDistance = distancia ? parseInt(distancia as string) * 1000 : 5000;
 
                 query.location = {
                     $near: {
