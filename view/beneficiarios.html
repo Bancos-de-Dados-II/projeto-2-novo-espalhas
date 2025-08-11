@@ -21,6 +21,16 @@
   <div class="container">
     <h1>Beneficiários Cadastrados</h1>
 
+    <div class="filtro-container">
+      <label for="filtroNome">Nome:</label>
+      <input type="text" id="filtroNome" placeholder="Digite o nome">
+
+      <label for="filtroDistancia">Distância (km):</label>
+      <input type="number" id="filtroDistancia" placeholder="Ex: 5">
+
+      <button id="btnFiltrar">Filtrar</button>
+    </div>
+
 
     <div class="table-container">
   <table id="tabela-beneficiarios">
@@ -43,6 +53,10 @@
     <div>
       <button id="botaoLink"><a href="index.html">Cadastrar Beneficiário</a></button>
     </div>
+    <div>
+      <button id="btnVoltar" class="btn-verde">Voltar para Cadastro</button>
+    </div>
+    
   </div>
 
   <script src="./scripts/viewBenefs.js"></script>

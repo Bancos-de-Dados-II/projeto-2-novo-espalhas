@@ -1,25 +1,35 @@
 const botaoBuscar = document.getElementById("botaoBuscar");
 
 var center = [-7.17823297640175, -38.77776149398453];
-var map = L.map("map").setView(center, 13);
+
+var map = L.map("map", {
+  zoomControl: true,
+  scrollWheelZoom: true,
+}).setView(center, 13);
+
 var icone = L.icon({
-  iconUrl: "https://cdn-icons-png.freepik.com/256/3661/3661280.png",
-  iconSize: [24, 24],
+  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
 });
+
 var marker = L.marker(center, {
   draggable: true,
   icon: icone,
 }).addTo(map);
 
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+marker.bindPopup("Localização inicial").openPopup();
+
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://carto.com/">CartoDB</a> contributors',
   maxZoom: 19,
-  attribution:
-    '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
 map.on("click", (evt) => {
   marker.setLatLng(evt.latlng);
   map.setView(evt.latlng);
+  marker.bindPopup("Posição selecionada:<br>Lat: " + evt.latlng.lat.toFixed(5) + "<br>Lng: " + evt.latlng.lng.toFixed(5)).openPopup();
 });
 
 map.locate();
