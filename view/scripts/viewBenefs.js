@@ -236,8 +236,4 @@ btDelete.onclick = () => excluirBenef(benef.uuid);
 tdAcoes.appendChild(btEdit);
 tdAcoes.appendChild(btDelete);
 
-document.getElementById("btnVoltar").addEventListener("click", () => {
-  window.location.href = "index.html";
-});
-
 carregarBeneficiarios();

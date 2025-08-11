@@ -369,20 +369,3 @@ td button {
   background-color: #0056b3;
 }
 
-.btn-verde {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 0;
-  width: 100%;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-verde:hover {
-  background-color: #45a049;
-}
-
-
